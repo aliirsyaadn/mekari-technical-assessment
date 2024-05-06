@@ -1,0 +1,307 @@
+openapi: 3.0.0
+info:
+  title: Mekari Technical Assessment
+  description: >-
+    This API documentation provides detailed information about the endpoints of
+    the Employee Management API developed as part of the Mekari Technical
+    Assessment.
+  version: 1.0.0
+servers:
+  - url: http://{{host}}
+paths:
+  /employees:
+    get:
+      tags:
+        - default
+      summary: Get Employees
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Date:
+              schema:
+                type: string
+                example: Mon, 06 May 2024 15:19:43 GMT
+            Content-Length:
+              schema:
+                type: integer
+                example: '661'
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                example-0:
+                  summary: success
+                  value:
+                    data:
+                      - id: 6
+                        first_name: Willy
+                        last_name: Kassulke
+                        email: Benny.Ullrich57@hotmail.com
+                        hire_date: '2023-05-06'
+                        created_at: '2024-05-06T22:16:52.38772+07:00'
+                        updated_at: '2024-05-06T22:16:52.38772+07:00'
+                      - id: 5
+                        first_name: Godfrey
+                        last_name: Frami
+                        email: Sandy.Beahan36@gmail.com
+                        hire_date: '2022-07-12'
+                        created_at: '2024-05-06T22:16:50.798862+07:00'
+                        updated_at: '2024-05-06T22:19:16.875563+07:00'
+                      - id: 4
+                        first_name: Gideon
+                        last_name: Marvin
+                        email: Lindsey.Schamberger@yahoo.com
+                        hire_date: '2023-12-25'
+                        created_at: '2024-05-06T22:16:34.491017+07:00'
+                        updated_at: '2024-05-06T22:19:37.575084+07:00'
+                    message: success
+                example-1:
+                  summary: success no data
+                  value:
+                    message: success no data
+    post:
+      tags:
+        - default
+      summary: Create Employee
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                first_name: '{{$randomFirstName}}'
+                last_name: '{{$randomLastName}}'
+                email: Arnold.Bosco@yahoo.com
+                hire_date: '2023-05-06'
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Date:
+              schema:
+                type: string
+                example: Mon, 06 May 2024 14:45:48 GMT
+            Content-Length:
+              schema:
+                type: integer
+                example: '241'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  id: 1
+                  first_name: Ali Irsyaad
+                  last_name: Nursyaban
+                  email: aliirsyaadn@gmail.com
+                  hire_date: '2023-05-06'
+                  created_at: '2024-05-06T21:45:48.612837+07:00'
+                  updated_at: '2024-05-06T21:45:48.612837+07:00'
+                message: success
+        '400':
+          description: Bad Request
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Date:
+              schema:
+                type: string
+                example: Mon, 06 May 2024 20:48:53 GMT
+            Content-Length:
+              schema:
+                type: integer
+                example: '37'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Failed to save employee
+  /employees/{id}:
+    get:
+      tags:
+        - default
+      summary: Get Employee by ID
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Date:
+              schema:
+                type: string
+                example: Mon, 06 May 2024 14:47:24 GMT
+            Content-Length:
+              schema:
+                type: integer
+                example: '241'
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                example-0:
+                  summary: success
+                  value:
+                    data:
+                      id: 1
+                      first_name: Ali Irsyaad
+                      last_name: Nursyaban
+                      email: aliirsyaadn@gmail.com
+                      hire_date: '2023-05-06'
+                      created_at: '2024-05-06T21:45:48.612837+07:00'
+                      updated_at: '2024-05-06T21:45:48.612837+07:00'
+                    message: success
+                example-1:
+                  summary: success no data
+                  value:
+                    message: success no data
+    put:
+      tags:
+        - default
+      summary: Update Employee
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                first_name: '{{$randomFirstName}}'
+                last_name: '{{$randomLastName}}'
+                email: '{{$randomEmail}}'
+                hire_date: '2023-12-25'
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '10'
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Date:
+              schema:
+                type: string
+                example: Mon, 06 May 2024 14:48:33 GMT
+            Content-Length:
+              schema:
+                type: integer
+                example: '231'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  id: 1
+                  first_name: Ali Irsyaad N
+                  last_name: Nursyaban
+                  email: aliirsyaadn@gmail.com
+                  hire_date: '2023-04-06'
+                  created_at: '0001-01-01T00:00:00Z'
+                  updated_at: '2024-05-06T21:48:33.285792+07:00'
+                message: success
+        '400':
+          description: Bad Request
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Date:
+              schema:
+                type: string
+                example: Mon, 06 May 2024 20:49:38 GMT
+            Content-Length:
+              schema:
+                type: integer
+                example: '39'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Failed to update employee
+    delete:
+      tags:
+        - default
+      summary: Delete Employee
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '10'
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Date:
+              schema:
+                type: string
+                example: Mon, 06 May 2024 15:17:23 GMT
+            Content-Length:
+              schema:
+                type: integer
+                example: '21'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: success
+        '400':
+          description: Bad Request
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Date:
+              schema:
+                type: string
+                example: Mon, 06 May 2024 20:49:58 GMT
+            Content-Length:
+              schema:
+                type: integer
+                example: '39'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: Failed to delete employee

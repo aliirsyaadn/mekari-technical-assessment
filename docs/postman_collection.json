@@ -1,0 +1,558 @@
+{
+	"info": {
+		"_postman_id": "4b71fff6-4683-4664-99d8-ad42cfdd4c32",
+		"name": "Mekari Technical Assessment",
+		"description": "This API documentation provides detailed information about the endpoints of the Employee Management API developed as part of the Mekari Technical Assessment.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29985476"
+	},
+	"item": [
+		{
+			"name": "Get Employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/employees",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/employees",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 May 2024 15:19:43 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "661"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 6,\n            \"first_name\": \"Willy\",\n            \"last_name\": \"Kassulke\",\n            \"email\": \"Benny.Ullrich57@hotmail.com\",\n            \"hire_date\": \"2023-05-06\",\n            \"created_at\": \"2024-05-06T22:16:52.38772+07:00\",\n            \"updated_at\": \"2024-05-06T22:16:52.38772+07:00\"\n        },\n        {\n            \"id\": 5,\n            \"first_name\": \"Godfrey\",\n            \"last_name\": \"Frami\",\n            \"email\": \"Sandy.Beahan36@gmail.com\",\n            \"hire_date\": \"2022-07-12\",\n            \"created_at\": \"2024-05-06T22:16:50.798862+07:00\",\n            \"updated_at\": \"2024-05-06T22:19:16.875563+07:00\"\n        },\n        {\n            \"id\": 4,\n            \"first_name\": \"Gideon\",\n            \"last_name\": \"Marvin\",\n            \"email\": \"Lindsey.Schamberger@yahoo.com\",\n            \"hire_date\": \"2023-12-25\",\n            \"created_at\": \"2024-05-06T22:16:34.491017+07:00\",\n            \"updated_at\": \"2024-05-06T22:19:37.575084+07:00\"\n        }\n    ],\n    \"message\": \"success\"\n}"
+				},
+				{
+					"name": "success no data",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/employees",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 May 2024 20:50:31 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"success no data\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Employee by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/employees/:id",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"employees",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/employees/:id",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"employees",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 May 2024 14:47:24 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "241"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"first_name\": \"Ali Irsyaad\",\n        \"last_name\": \"Nursyaban\",\n        \"email\": \"aliirsyaadn@gmail.com\",\n        \"hire_date\": \"2023-05-06\",\n        \"created_at\": \"2024-05-06T21:45:48.612837+07:00\",\n        \"updated_at\": \"2024-05-06T21:45:48.612837+07:00\"\n    },\n    \"message\": \"success\"\n}"
+				},
+				{
+					"name": "success no data",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/employees/:id",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"employees",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 May 2024 20:50:44 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"success no data\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"{{$randomFirstName}}\",\n    \"last_name\": \"{{$randomLastName}}\",\n    \"email\": \"Arnold.Bosco@yahoo.com\",\n    \"hire_date\": \"2023-05-06\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/employees",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Ali Irsyaad\",\n    \"last_name\": \"Nursyaban\",\n    \"email\": \"aliirsyaadn@gmail.com\",\n    \"hire_date\": \"2023-05-06\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/employees",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 May 2024 14:45:48 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "241"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"first_name\": \"Ali Irsyaad\",\n        \"last_name\": \"Nursyaban\",\n        \"email\": \"aliirsyaadn@gmail.com\",\n        \"hire_date\": \"2023-05-06\",\n        \"created_at\": \"2024-05-06T21:45:48.612837+07:00\",\n        \"updated_at\": \"2024-05-06T21:45:48.612837+07:00\"\n    },\n    \"message\": \"success\"\n}"
+				},
+				{
+					"name": "failed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"{{$randomFirstName}}\",\n    \"last_name\": \"{{$randomLastName}}\",\n    \"email\": \"Arnold.Bosco@yahoo.com\",\n    \"hire_date\": \"2023-05-06\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/employees",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 May 2024 20:48:53 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Failed to save employee\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Employee",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"{{$randomFirstName}}\",\n    \"last_name\": \"{{$randomLastName}}\",\n    \"email\": \"{{$randomEmail}}\",\n    \"hire_date\": \"2023-12-25\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/employees/:id",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"employees",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Ali Irsyaad N\",\n    \"last_name\": \"Nursyaban\",\n    \"email\": \"aliirsyaadn@gmail.com\",\n    \"hire_date\": \"2023-04-06\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/employees/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"employees",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 May 2024 14:48:33 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "231"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"first_name\": \"Ali Irsyaad N\",\n        \"last_name\": \"Nursyaban\",\n        \"email\": \"aliirsyaadn@gmail.com\",\n        \"hire_date\": \"2023-04-06\",\n        \"created_at\": \"0001-01-01T00:00:00Z\",\n        \"updated_at\": \"2024-05-06T21:48:33.285792+07:00\"\n    },\n    \"message\": \"success\"\n}"
+				},
+				{
+					"name": "failed",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"{{$randomFirstName}}\",\n    \"last_name\": \"{{$randomLastName}}\",\n    \"email\": \"{{$randomEmail}}\",\n    \"hire_date\": \"2023-12-25\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/employees/:id",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"employees",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 May 2024 20:49:38 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Failed to update employee\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Employee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/employees/:id",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"employees",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/employees/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"employees",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 May 2024 15:17:23 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "21"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"success\"\n}"
+				},
+				{
+					"name": "failed",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/employees/:id",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"employees",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 May 2024 20:49:58 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Failed to delete employee\"\n}"
+				}
+			]
+		}
+	]
+}
